@@ -1,0 +1,56 @@
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  release:
+    name: Build ${{ matrix.name }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            name: linux-x86_64
+          - os: macos-latest
+            name: macos-arm64
+    steps:
+      - uses: actions/checkout@v6
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/setup-go@v6
+        with:
+          go-version: '1.25'
+          cache-dependency-path: emu/go.sum
+
+      - name: build helper
+        run: bash scripts/build-emu.sh
+      - name: build server
+        run: cargo build --release --locked
+
+      - name: package
+        run: |
+          set -eu
+          pkg="stella-mcp-${{ matrix.name }}"
+          mkdir -p "dist/$pkg"
+          cp target/release/stella-mcp "dist/$pkg/"
+          cp bin/gopher2600-mcp "dist/$pkg/"
+          cp -R assets "dist/$pkg/assets"
+          cp README.md "dist/$pkg/"
+          tar -C dist -czf "$pkg.tar.gz" "$pkg"
+          shasum -a 256 "$pkg.tar.gz" > "$pkg.tar.gz.sha256"
+
+      - name: publish
+        uses: softprops/action-gh-release@v3
+        with:
+          files: |
+            stella-mcp-${{ matrix.name }}.tar.gz
+            stella-mcp-${{ matrix.name }}.tar.gz.sha256
+          generate_release_notes: true
