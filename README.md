@@ -1,6 +1,11 @@
+<p align="center">
+  <img src="assets/logo.svg" alt="stella-mcp" width="480">
+</p>
+
 # stella-mcp
 
 [![CI](https://github.com/aovestdipaperino/Stella-mcp-server/actions/workflows/ci.yml/badge.svg)](https://github.com/aovestdipaperino/Stella-mcp-server/actions/workflows/ci.yml)
+[![License: MIT OR Apache-2.0](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](#license)
 
 An MCP server for running and debugging Atari 2600 (VCS) games.
 
@@ -160,3 +165,21 @@ scripts/        build-emu.sh
 third_party/    Gopher2600 clone (git-ignored, created by the build script)
 bin/            built helper (git-ignored)
 ```
+
+## License
+
+Licensed under either of
+
+- MIT license ([LICENSE-MIT](LICENSE-MIT) or <https://opensource.org/licenses/MIT>)
+- Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE) or <https://www.apache.org/licenses/LICENSE-2.0>)
+
+at your option.
+
+Unless you explicitly state otherwise, any contribution intentionally submitted
+for inclusion in this work by you, as defined in the Apache-2.0 license, shall
+be dual licensed as above, without any additional terms or conditions.
+
+Gopher2600 is a separate project by JetSetIlly, used here under its own license;
+it is fetched into `third_party/` at build time and is not redistributed by this
+repository. The Atari "Fuji" mark is a trademark of Atari Interactive, Inc.; the
+logo here is a fan rendering and implies no affiliation or endorsement.
