@@ -3,14 +3,14 @@
   <!-- Atari black badge -->
   <rect x="0" y="0" width="760" height="300" rx="28" fill="#0B0B0B"/>
 
-  <!-- Atari "Fuji" mark, drawn in classic Atari red -->
-  <g transform="translate(78,38) scale(0.62)" fill="#E4002B">
-    <!-- left prong -->
-    <path d="M198,340 C194,180 180,40 158,40 L98,40 C108,180 130,340 144,340 Z"/>
-    <!-- center prong -->
-    <rect x="210" y="40" width="60" height="300"/>
-    <!-- right prong -->
-    <path d="M282,340 C286,180 300,40 322,40 L382,40 C372,180 350,340 336,340 Z"/>
+  <!-- Atari "Fuji" mark: straight center bar, side bands flaring out at the base -->
+  <g transform="translate(58,42) scale(0.56)" fill="#E4002B">
+    <!-- left band -->
+    <path d="M200,40 L160,40 C158,170 132,300 80,340 L180,340 C186,300 198,170 200,40 Z"/>
+    <!-- center bar -->
+    <rect x="212" y="40" width="56" height="300"/>
+    <!-- right band -->
+    <path d="M280,40 L320,40 C322,170 348,300 400,340 L300,340 C294,300 282,170 280,40 Z"/>
   </g>
 
   <!-- MCP wordmark -->
