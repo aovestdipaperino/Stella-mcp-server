@@ -4,6 +4,11 @@
 
 # stella-mcp
 
+<p align="center">
+  <a href="https://ai.enzolombardi.net/"><img src="https://img.shields.io/badge/built%20with-AI-D97757?style=flat-square&labelColor=101010&logo=anthropic&logoColor=white" alt="Built with AI — part of Enzo Lombardi's AI portfolio"></a>
+</p>
+
+
 [![CI](https://github.com/aovestdipaperino/Stella-mcp-server/actions/workflows/ci.yml/badge.svg)](https://github.com/aovestdipaperino/Stella-mcp-server/actions/workflows/ci.yml)
 [![License: MIT OR Apache-2.0](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue.svg)](#license)
 
